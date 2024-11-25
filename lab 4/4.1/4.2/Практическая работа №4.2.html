@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронные часы</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            color: mediumvioletred;
+            font-family: 'Courier New', monospace;
+        }
+
+        .clock {
+            font-size: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 5px solid mediumvioletred;  
+            padding: 20px;  
+            border-radius: 20px;  
+        }
+
+        .segment {
+            display: flex;
+        }
+
+        .colon {
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+
+        .digit {
+            display: inline-block;
+            animation: slideIn 1s ease-in-out forwards;
+            transform: translateY(100%);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock" id="clock">
+        <div class="segment" id="hours">00</div>
+        <div class="colon">:</div>
+        <div class="segment" id="minutes">00</div>
+        <div class="colon">:</div>
+        <div class="segment" id="seconds">00</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            document.getElementById('hours').innerHTML = `<span class="digit">${hours}</span>`;
+            document.getElementById('minutes').innerHTML = `<span class="digit">${minutes}</span>`;
+            document.getElementById('seconds').innerHTML = `<span class="digit">${seconds}</span>`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
