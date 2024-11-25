@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Grid</title>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(16, 1fr); /* Макет для 8 колонок */
+        grid-template-rows: repeat(10, 1fr); /* Макет для 5 строк */
+        gap: 0px; /* Пробелы между блоками */
+        width: 90vw; /* Адаптивная ширина */
+        height: 800px;
+    }
+    
+    .grid-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        border: 15px solid black;
+    }
+   
+
+    .toggle-grid {
+        margin-bottom: 10px;
+    }
+
+    .grid-lines {
+        outline: 1px solid white;
+    }
+    
+    .pink{
+        
+        
+    height: 200px;
+    }
+     .item-1 {
+        background-color: #FFA07A; /* Цвет блока */
+       grid-column: span 9;
+        width: 200px;
+        border-right: 450px solid black; /* Толщина и цвет правой рамки */
+        border-left: 450px solid black; /* Толщина и цвет левой рамки */
+    }
+     .item-2 {
+        background-color: #FF4500; /* Цвет блока */
+grid-column: span 9;
+        width: 200px;
+        border-right: 350px solid black; /* Толщина и цвет правой рамки */
+        
+        border-left: 350px solid black; /* Толщина и цвет левой рамки */
+    }
+
+</style>
+</head>
+<body>
+    <div class="toggle-grid">   
+        <label>
+            <input type="checkbox" id="gridToggle" checked> Сетка
+        </label>
+    </div>
+    <div class="grid-container" id="gridContainer">
+        <div class="grid-item" style="background-color: #CD5C5C; grid-column: span 4; grid-row: 1;">#CD5C5C</div>
+        <div class="grid-item" style="background-color: #DC143C; grid-column: span 4; grid-row: 1;">#DC143C</div>
+        <div class="grid-item" style="background-color: #8B0000; grid-column: span 4; grid-row: 1;">#8B0000</div>
+        <div class="grid-item" style="background-color: #FF0000; grid-column: span 4; grid-row: 1;">#FF0000</div>
+        
+        <div class="grid-item" style="background-color: #FFC0CB; grid-column: span 6; grid-row: 2;">#FFC0CB</div>
+        <div class="grid-item" style="background-color: #FF69B4; grid-column: span 6; grid-row: 3;">#FF69B4</div>
+       <div class="grid-item" style="background-color: #C71585; grid-column: span 10; grid-row: 2 / 4;">#C71585</div>
+
+
+        <div class="grid-item" style="background-color: #ADFF2F; grid-column: span 3; grid-row: 4 / 6;">#ADFF2F</div>
+        <div class="grid-item" style="background-color: #00FF00; grid-column: span 3; grid-row: 6 / 8;">#00FF00</div>
+        <div class="grid-item" style="background-color: #32CD32; grid-column: span 6; grid-row: 4 / 7;">#32CD32</div>
+
+        <div class="grid-item" style="background-color: #006400; grid-column: span 4; grid-row: 4;">#006400</div>
+        <div class="grid-item" style="background-color: #9ACD32; grid-column: span 5; grid-row: 4;">#9ACD32</div>
+
+      
+        <div class="grid-item" style="background-color: #0DFA9A; grid-column: span 3; grid-row: 7;">#0DFA9A</div>
+        <div class="grid-item" style="background-color: #2E8B57; grid-column: span 3; grid-row: 7;">#2E8B57</div>
+        <div class="grid-item" style="background-color: #808000; grid-column: span 8; grid-row: 5 / 8;">#808000</div>
+
+        <div class="grid-item item-1" style="background-color: #FFA07A;  grid-row: 8;">#FFA07A</div>
+        
+        <div class="grid-item item-2" style="background-color: #FF4500;  grid-row: 8;">#FF4500</div>
+        <div class="grid-item" style="background-color: #BC8F8F; grid-column: span 3; grid-row: 9 / 12;">#BC8F8F</div>
+        <div class="grid-item" style="background-color: #F4A460; grid-column: span 3; grid-row: 9 / 12;">#F4A460</div>
+        <div class="grid-item" style="background-color: #D2691E; grid-column: span 6; grid-row: 9;">#D2691E</div>
+        <div class="grid-item" style="background-color: #8B4513; grid-column: span 6; grid-row: 9;">#8B4513</div>
+        
+        <div class="grid-item" style="background-color: #A52A2A; grid-column: span 12; grid-row: 10;">#A52A2A</div>
+    </div>
+
+    <script>
+        const gridToggle = document.getElementById('gridToggle');
+        const gridContainer = document.getElementById('gridContainer');
+        
+        gridToggle.addEventListener('change', () => {
+            const items = gridContainer.querySelectorAll('.grid-item');
+            items.forEach(item => item.classList.toggle('grid-lines'));
+        });
+    </script>
+</body>
+</html>
