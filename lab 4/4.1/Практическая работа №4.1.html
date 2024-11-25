@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космический корабль</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .spaceship {
+            position: relative;
+            width: 100px;
+            height: 170px;
+        }
+       
+        .body {
+            position: absolute;
+            bottom: 0;
+            width: 80px;
+            height: 120px;
+            background: silver;
+            border-radius: 30px 30px 10px 10px;
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+      
+        .nose {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 50px solid silver;
+            transform: translateX(-50%);
+        }
+       
+        .window {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background: lightblue;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 30px lightblue, 0 60px lightblue;
+        }
+      
+        .wing-left,
+        .wing-right {
+            position: absolute;
+            bottom: 30px;
+            width: 70px;
+            height: 30px;
+            background: gray;
+            transform: rotate(-30deg);
+        }
+        .wing-left {
+            left: -40px;
+             transform: rotate(-30deg);
+        }
+        .wing-right {
+            right: -40px;
+            transform: rotate(30deg);
+        }
+       
+        .light {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            background: red;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: pulse 1s infinite alternate;
+        }
+      
+        @keyframes pulse {
+            from {
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(-50%) scale(1.5);
+                opacity: 0.6;
+            }
+        }
+   
+        .fire {
+            position: absolute;
+            bottom: -150px;
+            left: 50%;
+            width: 50px;
+            height: 90px;
+            background: linear-gradient(to top, orange, transparent);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            
+            animation: flame 0.8s infinite alternate;
+        }
+        
+        @keyframes flame {
+            from {
+                width: 60px;
+                height: 170px;
+                opacity: 1;
+            }
+            to {
+                width: 100px;
+                height: 200px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="spaceship">
+        <div class="nose"></div>
+        <div class="body"></div>
+        <div class="window"></div>
+        <div class="wing-left"></div>
+        <div class="wing-right"></div>
+        <div class="light"></div>
+        <div class="fire"></div>
+    </div>
+</body>
+</html>
