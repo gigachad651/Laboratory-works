@@ -1,0 +1,536 @@
+<!doctype html>
+<html>
+<head>
+<title>Лабораторная работа №1</title>
+</head>
+<style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+h1, h2, h4, h5 {
+    font-family: 'Pacifico', cursive; 
+    text-transform: uppercase; 
+}
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+a, h9 {
+    font-family: 'Dancing Script', cursive; 
+    text-transform: uppercase; 
+    text-decoration: none;
+    color: inherit; 
+}
+     
+    h1 {
+    font-size: 24px; 
+        }
+
+    h2 {
+    font-size: 18px; 
+        }
+    h5 {
+         font-size: 12px;
+    }
+    p {
+    font-size: 14px;
+        }
+    .text-justify {
+    text-align: justify; 
+}
+    @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+p, h6, code  {
+    font-family: 'Sacramento', cursive;
+    text-transform: uppercase;
+}
+    a, h9 {
+    font-size: 14px; 
+    display: block;
+    margin: 5px 0; 
+    text-decoration: none; 
+    color: white; 
+        }
+
+    .image-left {
+    width: 500px;
+    height: 500px;
+    float: left; 
+    margin-right: 10px; 
+        }
+    .image-right {
+    width: 500px;
+    height: 500px;
+    float: right; 
+    margin-left: 10px; 
+        }
+    .link-small {
+    font-size: 12px; 
+    text-decoration: none; 
+}
+
+        {
+            margin: 0; 
+            padding: 0; 
+        }
+        .responsive-image {
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto; 
+        }
+        .image-container {
+            width: 100%; 
+            height: auto; 
+            display: flex; 
+            float: left; 
+            flex-wrap: wrap; 
+            gap: 15px; 
+        }
+    h6, {
+    font-weight: normal;
+    font-size: 14px;  
+    margin: 0 auto;
+        }
+     h9, {
+    font-weight: normal;
+    font-size: 12px;  
+    margin: 0 auto;
+        }
+    pre {
+            font-size: 20px; 
+            font-family: monospace; 
+        }
+
+    
+    
+    code {
+        white-space: pre;
+      }
+    
+    
+     .doctype { color: green; }
+      .tag { color: blue; }
+      .meta { color: purple; }
+      .title { color: purple; }
+      .text { color: black; }
+    
+   .tall-skinny-image {
+    display: block;
+    margin: 0 auto;
+    width: 100%; 
+    height: 5vh; 
+    object-fit: cover; 
+}
+    
+        ol {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+            
+        }
+ ul {
+            list-style-type: square; 
+            margin-left: 20px;      
+            font-family: Arial, sans-serif; 
+            font-size: 16px;       
+        }
+
+    .custom-list {
+            list-style-type: none; 
+            padding-left: 20px;   
+        }
+
+        .custom-list li {
+            font-family: Arial, sans-serif; 
+            font-size: 16px;               
+            margin-bottom: 10px;         
+            position: relative;            
+        }
+
+        .custom-list li::before {
+            content: "";  
+            width: 30px;
+            height: 30px; 
+            background-image: url('images.png'); 
+            background-size: cover; 
+            position: absolute; 
+            left: -20px;
+            top: 50%; 
+            transform: translateY(-50%); 
+        }
+table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-size: 16px;
+    font-family: Arial, sans-serif;
+    
+        }
+
+        th, td {
+            border: 2px solid #ccc;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f4f4f4;
+             color: black;
+        }
+
+        tr:nth-child(odd) {
+            background-color: black;
+        }
+
+        caption {
+            caption-side: top;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+</style>
+    
+
+    <body style="background-color: black; color: white;">
+<h1 style="text-align: center;">Содержание</h1>
+        
+    <a href="https://brunoyam.com/blog/programmirovanie/kak-izmenjalsja-html"> 1. История создания </a>
+    <a href="https://www.w3schools.com/html/"> 2. Краткий обзор языка</a>
+        <h9>3. Примеры кода</h9>
+    <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Introduction_to_HTML/Getting_started " class="link-small"> - 1 пример </a>
+    <a href="https://htmlacademy.ru/blog/html/free-html-template" class="link-small"> - 2 прмиер </a> 
+    <a href="https://sky.pro/wiki/html/primery-html-koda-dlya-sozdaniya-veb-stranic-ot-prostogo-k-slozhnomu/" class="link-small"> - 3 пример </a> 
+    
+    <h1 style="text-align: center;"> Статья: язык Html краткая информация    </h1>
+<p>HTML (HyperText Markup Language) — это основополагающий язык для создания и структурирования веб-страниц. В этой статье мы рассмотрим его историю, основные возможности и приведем примеры кода.
+</p>
+   <img src="thumb-1920-1044851.jpg" class="tall-skinny-image">
+<h2 style="text-align: center;"> История создания</h2>
+     
+        <p style="text-align: justify;">
+Если обратиться к самому началу использования HTML в вебе, то началось всё, как принято, со «слова», вернее с трёх – World Wide Web, или «всемирная паутина». Как только в 91 году заработал интернет, то первый же сайт, сверстанный в ноябре 92, был на базе HTML, потому что на тот момент это был единственный язык гипертекстовой разметки, предназначенный для разработки интерне-страниц.
+
+Конечно, сам HTML зародился ещё раньше, до появления интернета, и создал его Тимоти Джон Барнерс-Ли примерно в 1986 году, специалист по ядерным исследованиям в CERN. Язык помогал форматировать научные документы, без изменения параметров и цвета шрифта, лишь заголовки, абзацы и другие элементы.
+
+Возможности HTML были весьма ограниченными, но это не мешало ему стать основным языком разметки интернета. Хотя первые страницы и выглядели как обычные текстовые документы, по которым можно было перемещаться с помощью гиперссылок, он начал быстро развиваться и на сегодняшний день существует версия HTML5, которая позволяет управлять не только текстами и ссылками, но и мультимедийными элементами. 
+        </p>
+<h5> 1. 1994 год. Основание W3C </h5>
+<p style="text-align: justify;">
+В тот момент, когда был основан особый Консорциум Всемирной Паутины (W3C), начал раскрываться весь потенциал, который изначально прятался в интернете. Созданные протоколы стали гарантией развития интернета в будущем.
+
+Если бы не команда энтузиастов из W3C, то современная Сеть выглядела бы как «винегрет» из разных браузеров и множества версий языка верстки. А упорядоченные теги и атрибуты позволили двигаться HTML в нужном направлении.
+        </p>
+        
+         <img src="shutterstock_1826915288-2048x1463.jpg" class="image-left">
+<h5>2. 995 год. HTML 2.0 </h5>
+        <p style="text-align: justify;"> 
+Несмотря на то, что HTML активно пользовались уже несколько лет, в изначальной версии не существовало никаких стандартов и лишь к 2.0 они появились. Официальная сертификация для этого языка была опубликована инженерным сообществом IETF, благодаря чему была заложена основа для дальнейшего развития языка разметки. Это довольно знаковый момент, поэтому для отличия от первоначального варианта, новой версии был сразу же присвоен второй порядковый номер.
+        </p>
+<h5>3. 1996 год. Создание CSS </h5>
+        <p style="text-align: justify;">
+Нельзя не упомянуть о языке, который сегодня неразрывно связан с HTML. CSS, или Cascading Style Sheets – это своего рода таблицы со стилями, соединяющиеся с документом страницы и позволяют добавлять визуальное оформление для различных элементов текста или мультимедиа.
+Главная особенность CSS в том, что он никак не зависит от HTML, создается самостоятельно и имеет свой уникальный синтаксис, задающий параметры любому тегу документа. Это удобно, ведь независимая работа с файлом CSS значительно облегчает процесс редакции страницы, не захламляя при этом основной документ.
+</p>
+<h5>4. 1997 год. HTML 3.2 </h5>
+       <p style="text-align: justify;"> 
+Что же произошло дальше? Как уже говорилось выше, после сообщества IETW работу над протоколами продолжили W3C и новые стандарты начали размещаться на сайте www.w3c.org. Теперь, помимо стандартных тегов, в языке верстки появилось несколько полезнейших функций, к примеру, таблицы, аплеты, возможность объектировать текст относительно медиа-элементов. Удивительно, что в версии 3.2 сохранялась полная совместимость с 2.0, благодаря чему обновление не отразилось на уже существующих страницах в Сети.
+        </p>
+<h5>5. 1999 год. HTML 4.0 </h5>
+        <p style="text-align: justify;">
+Некоторые теги устаревают, им на смену приходят новые решения. Это вполне нормальный процесс, ведь главная задача разработчиков, совершенствующих язык верстки – это упростить работу с ним, сделать HTML доступным для людей, которые самостоятельно создают или редактируют страницы в сети. Теперь «хорошим тоном» считается использование стилей CSS, и визуально структура документа начала упрощаться.    
+В работу включается поддержка скриптов и фреймворков, внедряются различные объекты. Таблицы были модифицированы, а сам синтаксис стал полностью интернациональным, объединив тем самым весь мир в сети интернет.
+        </p>
+<h5>6. 2000 год. XHTML 1.0 </h5>
+        <p style="text-align: justify;">
+Приставленная в начале буква X обозначает eXtensible, что переводится как «расширяемый». Но несмотря на то, что XHTML пришел на смену версии HTML 4.01, они были весьма схожи. В этом варианте не было добавлено ни новых элементов, ни атрибутов.
+Сертификат XHTML 1.0 содержал в себе практически те же самые требования, но, в то же время, объединял все преимущества обоих версий. Конечно, между HTML и XHTML существовали некоторые синтаксические различия. К примеру, в XML-разметке обязательно закрытие тегов, в то время как в HTML допускались некоторые вольности. К сожалению, следующий вариант 2.0 был катастрофическим провалом, ведь при его разработке пытались добиться чистоты и стройности структуры, а в результате получилось, что он не имел обратной совместимости с тем контентом, который уже существовал, а также не поддерживал предыдущие версии языка гипертекстовой разметки.
+        </p>
+<h5>7. 2014 год. HTML5  </h5>
+        <p style="text-align: justify;">
+         Актуальной на сегодняшний день версией является HTML5, которая развивается и дорабатывается до сих пор.
+        </p>
+<img src="thumb-1920-1044851.jpg" class="tall-skinny-image">
+<h2 style="text-align: center;"> Краткий обзор языка</h2>
+
+    <h5>Структура документа:</h5>
+    <p>
+        HTML (Hypertext Markup Language) — это стандартный язык разметки, используемый для создания веб-страниц и веб-приложений. Он позволяет структурировать контент, добавлять текст, изображения, ссылки и другие элементы на страницу. HTML является основным строительным блоком Интернета и работает в сочетании с CSS (Cascading Style Sheets) для оформления и JavaScript для интерактивности.
+
+        HTML-документ имеет строго определённую структуру, начинающуюся с объявления типа документа (<code>&lt;!DOCTYPE html&gt;</code>), за которым следуют теги <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> и <code>&lt;body&gt;</code>. В секции <code>&lt;head&gt;</code> размещается метаинформация, а в <code>&lt;body&gt;</code> — содержимое страницы.
+    </p>
+<img src="1.png" class="image-right">
+    <h5>Теги и атрибуты:</h5>
+    <p>
+        HTML использует теги, которые заключаются в угловые скобки. Например, <code>&lt;p&gt;</code> для параграфа, <code>&lt;a&gt;</code> для ссылки, <code>&lt;img&gt;</code> для изображения. Теги могут иметь атрибуты, которые предоставляют дополнительную информацию, например, <code>&lt;a href="url"&gt;</code>.
+    </p>
+
+    <h5>Семантика:</h5>
+    <p>
+        HTML5, последняя версия HTML, включает семантические теги, такие как <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, и <code>&lt;section&gt;</code>, которые помогают структурировать содержимое более логично и улучшают SEO (поисковую оптимизацию).
+    </p>
+
+    <h5>Мультимедиа:</h5>
+    <p>
+        HTML поддерживает встраивание мультимедийных элементов, таких как изображения, видео и аудио, с помощью тегов <code>&lt;img&gt;</code>, <code>&lt;video&gt;</code> и <code>&lt;audio&gt;</code>.
+    </p>
+
+    <h5>Формы:</h5>
+    <p>
+        HTML предоставляет возможность создания интерактивных форм с помощью тега <code>&lt;form&gt;</code>, позволяя пользователям вводить данные и отправлять их на сервер.
+    </p>
+
+    <h5>Применение HTML:</h5    >
+    <p>
+        HTML является основой всех веб-страниц и необходим для веб-разработки. Он используется в различных областях, включая создание блогов, корпоративных сайтов, интернет-магазинов и веб-приложений. Понимание HTML является первым шагом для тех, кто хочет изучить веб-разработку, поскольку он является основой для более сложных языков и технологий.
+    </p>
+    <p>
+        HTML — это язык разметки, который формирует основу для всех веб-сайтов. Знание HTML является важным навыком для веб-разработчиков и дизайнеров. С развитием технологий и появлением новых стандартов, таких как HTML5, возможности языка продолжают расширяться, позволяя создавать более сложные и интерактивные веб-приложения.
+    </p>
+        <table>
+        <caption>Популярные HTML-теги</caption>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Тег</th>
+                <th>Описание</th>
+                <th>Пример использования</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>&lt;h1&gt;</td>
+                <td>Заголовок первого уровня (самый крупный)</td>
+                <td>&lt;h1&gt;Заголовок&lt;/h1&gt;</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>&lt;p&gt;</td>
+                <td>Абзац текста</td>
+                <td>&lt;p&gt;Это пример параграфа.&lt;/p&gt;</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>&lt;a&gt;</td>
+                <td>Гиперссылка (ссылка)</td>
+                <td>&lt;a href="https://example.com"&gt;Перейти на сайт&lt;/a&gt;</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>&lt;img&gt;</td>
+                <td>Вставка изображения</td>
+                <td>&lt;img src="image.jpg" alt="Описание изображения"&gt;</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>&lt;ul&gt;</td>
+                <td>Ненумерованный список</td>
+                <td>&lt;ul&gt;&lt;li&gt;Первый пункт&lt;/li&gt;&lt;li&gt;Второй пункт&lt;/li&gt;&lt;/ul&gt;</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>&lt;ol&gt;</td>
+                <td>Нумерованный список</td>
+                <td>&lt;ol&gt;&lt;li&gt;Первый пункт&lt;/li&gt;&lt;li&gt;Второй пункт&lt;/li&gt;&lt;/ol&gt;</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>&lt;div&gt;</td>
+                <td>Контейнер для других элементов</td>
+                <td>&lt;div&gt;Контент внутри div&lt;/div&gt;</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>&lt;span&gt;</td>
+                <td>Инлайн элемент для стилизации части текста</td>
+                <td>&lt;span style="color: red"&gt;Красный текст&lt;/span&gt;</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>&lt;table&gt;</td>
+                <td>Таблица</td>
+                <td>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Ячейка 1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>&lt;form&gt;</td>
+                <td>Форма для ввода данных</td>
+                <td>&lt;form action="/submit"&gt;&lt;input type="text"&gt;&lt;/form&gt;</td>
+            </tr>
+        </tbody>
+    </table>
+ <img src="thumb-1920-1044851.jpg" class="tall-skinny-image">
+<h2 style= "text-align: center;"> Примеры кода  </h2>
+      
+<p>1. Структура HTML документа</p>
+   <div class="code">
+      <span class="doctype">&lt;!doctype html&gt;</span><br>
+      <span class="tag">&lt;html&gt;</span><br>
+      <span class="tag">&lt;head&gt;</span><br>
+      <span class="meta">&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="utf-8" /&gt;</span><br>
+      <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Тестовая страница&lt;/title&gt;</span><br>
+      <span class="tag">&lt;/head&gt;</span><br>
+      <span class="tag">&lt;body&gt;</span><br>
+      <span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Это — моя страница&lt;/p&gt;</span><br>
+      <span class="tag">&lt;/body&gt;</span><br>
+      <span class="tag">&lt;/html&gt;</span>
+ <p>2. Пример кода WEB страницы</p> 
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Заголовок страницы&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./styles/style.css"&gt;
+
+    &lt;meta property="og:title" content="Заголовок страницы в OG"&gt;
+    &lt;meta property="og:description" content="Описание страницы в OG"&gt;
+    &lt;meta property="og:image" content="https://example.com/image.jpg"&gt;
+    &lt;meta property="og:url" content="https://example.com/"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Личный сайт&lt;/h1&gt;
+      &lt;p&gt;Который сделан на основе готового шаблона&lt;/p&gt;
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="index.html"&gt;Эта страница&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="catalog.html"&gt;Другая страница&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;article&gt;
+        &lt;section&gt;
+          &lt;h2&gt;Первая секция&lt;/h2&gt;
+          &lt;p&gt;Она обо мне&lt;/p&gt;
+          &lt;img src="images/image.png" alt="Человек и пароход"&gt;
+          &lt;p&gt;Но может быть и о семантике, я пока не решил.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+          &lt;h2&gt;Вторая секция&lt;/h2&gt;
+          &lt;p&gt;Она тоже обо мне&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+          &lt;h2&gt;И третья&lt;/h2&gt;
+          &lt;p&gt;Вы уже должны были начать догадываться.&lt;/p&gt;
+        &lt;/section&gt;
+      &lt;/article&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+      &lt;p&gt;Сюда бы я вписал информацию об авторе и ссылки на другие сайты&lt;/p&gt;
+    &lt;/footer&gt;
+    &lt;!-- сюда можно подключить jquery &lt;script src="scripts/app.js" defer&gt;&lt;/script&gt; --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+<p>3. Пример сложного кода WEB страницы</p> 
+     <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Сложная веб-страница&lt;/title&gt;
+    &lt;style&gt;
+        
+        
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Мой сложный сайт&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;nav&gt;
+        &lt;a href="#"&gt;Главная&lt;/a&gt;
+        &lt;a href="#"&gt;О нас&lt;/a&gt;
+        &lt;a href="#"&gt;Контакты&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;main&gt;
+        &lt;h2&gt;Добро пожаловать!&lt;/h2&gt;
+        &lt;p id="message"&gt;Нажмите на кнопку, чтобы изменить этот текст.&lt;/p&gt;
+        &lt;button onclick="changeText()"&gt;Нажми меня&lt;/button&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &amp;copy; 2023 Мой сайт
+    &lt;/footer&gt;
+
+    &lt;script&gt;
+        function changeText() {
+            document.getElementById('message').innerText = 'Текст изменен!';
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+    </pre>
+       <img src="thumb-1920-1044851.jpg" class="tall-skinny-image">
+  <h2 style= "text-align: center;"> Список использованных тегов HTML и CSS-свойств  </h2> 
+       <ul>
+        <li>&lt;ul&gt; — для создания маркированного списка</li>
+        <li>&lt;ol&gt; — для создания нумерованного списка</li>
+        <li>&lt;li&gt; — для обозначения элемента списка</li>
+        <li>&lt;dl&gt; — для создания списка определений</li>
+        <li>&lt;dt&gt; — для обозначения термина в списке определений</li>
+        <li>&lt;dd&gt; — для обозначения определения термина</li>
+    </ul>
+       <h1>Другие полезные теги HTML</h1>
+   <ul class="custom-list">
+        <li>&lt;header&gt; — заголовок страницы</li>
+        <li>&lt;footer&gt; — нижний колонтитул страницы</li>
+        <li>&lt;article&gt; — статья или раздел</li>
+        <li>&lt;aside&gt; — боковая панель</li>
+        <li>&lt;nav&gt; — меню навигации</li>
+        <li>&lt;section&gt; — раздел контента</li>
+    </ul>
+       <ol>
+        HTML теги
+        <li><code>&lt;!DOCTYPE html&gt;</code> - объявление типа документа.</li>
+        <li><code>&lt;html&gt;</code> - корневой элемент HTML-документа.</li>
+        <li><code>&lt;head&gt;</code> - содержит метаданные документа, такие как заголовок и стили.</li>
+        <li><code>&lt;title&gt;</code> - задает заголовок страницы в браузере.</li>
+        <li><code>&lt;style&gt;</code> - встроенные стили CSS.</li>
+        <li><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> - заголовки различных уровней.</li>
+        <li><code>&lt;a&gt;</code> - гиперссылка.</li>
+        <li><code>&lt;p&gt;</code> - абзац текста.</li>
+        <li><code>&lt;img&gt;</code> - изображение.</li>
+        <li><code>&lt;code&gt;</code> - используется для отображения текста кода.</li>
+        <li><code>&lt;pre&gt;</code> - элемент предварительного форматирования текста.</li>
+        <li><code>&lt;div&gt;</code> - контейнер для разметки.</li>
+        <li><code>&lt;span&gt;</code> - используется для инлайн-элементов.</li>
+        <li><code>&lt;body&gt;</code> - основное содержимое документа.</li>
+        <li><code>&lt;header&gt;</code> - элемент для обозначения заголовка страницы.</li>
+        <li><code>&lt;nav&gt;</code> - элемент для навигационного меню.</li>
+        <li><code>&lt;ul&gt;</code> и <code>&lt;li&gt;</code> - список и элементы списка.</li>
+        <li><code>&lt;section&gt;</code> - раздел страницы.</li>
+        <li><code>&lt;main&gt;</code> - основное содержимое страницы.</li>
+        <li><code>&lt;footer&gt;</code> - нижняя часть страницы.</li>
+        <li><code>&lt;script&gt;</code> - JavaScript-код.</li>
+        CSS свойства
+        <li><code>font-family</code> - задает шрифт текста.</li>
+        <li><code>text-transform</code> - преобразование текста (например, в верхний регистр).</li>
+        <li><code>text-align</code> - выравнивание текста.</li>
+        <li><code>font-size</code> - размер текста.</li>
+        <li><code>text-decoration</code> - стилизация текста (например, подчеркивание).</li>
+        <li><code>color</code> - цвет текста.</li>
+        <li><code>display</code> - видимость и поведение элемента (например, block, flex).</li>
+        <li><code>float</code> - обтекание элемента (например, left, right).</li>
+        <li><code>margin</code> - отступы.</li>
+        <li><code>padding</code> - внутренние отступы.</li>
+        <li><code>width</code> и <code>height</code> - ширина и высота элемента.</li>
+        <li><code>max-width</code> - максимальная ширина.</li>
+        <li><code>font-weight</code> - толщина текста.</li>
+        <li><code>background-color</code> - цвет фона.</li>
+        <li><code>position</code> - позиционирование элемента (fixed, absolute).</li>
+        <li><code>gap</code> - расстояние между элементами (в flex-контейнерах).</li>
+        <li><code>white-space</code> - управление пробелами.</li>
+    </ol>
+       
+    </body>
+</html>
