@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма для соискателя вакансии C++ разработчика</title>
+    <style>
+        body {
+            font-family: Arial, monospace;
+            margin: 20px;
+            background-color: black;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, textarea, select, button {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 3px solid black;
+            border-radius: 15px;
+        }
+        button {
+            background-color: white;
+            color: black;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+        select {
+            background-color: white;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        select option {
+            background-color: white; 
+            color: black; 
+        }
+        select option:checked {
+            background-color: black; 
+            color: white;
+        }
+        select option:hover {
+            background-color: #f0f0f0; 
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            label {
+                display: none;
+            }
+            input::placeholder, 
+            textarea::placeholder {
+                color: #666;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit-application" method="POST">
+        <h2>Форма для соискателя вакансии C++ разработчика</h2>
+        
+        <label for="fullname">ФИО:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Введите ваше полное имя" required>
+        
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+        
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Введите ваш номер телефона" required>
+        
+        <label for="experience">Опыт работы (в годах):</label>
+        <input type="number" id="experience" name="experience" min="0" max="50" placeholder="Опыт работы (лет)" required>
+        
+        <label for="skills">Навыки программирования:</label>
+        <textarea id="skills" name="skills" placeholder="Навыки C++, библиотеки, фреймворки" rows="4" required></textarea>
+        
+        <label for="education">Уровень образования:</label>
+        <select id="education" name="education" required>
+            <option value="" disabled selected>Выберите уровень</option>
+            <option value="bachelor">Бакалавр</option>
+            <option value="master">Магистр</option>
+            <option value="phd">Кандидат наук</option>
+            <option value="none">Без высшего образования</option>
+        </select>
+        
+        <label for="resume">Загрузите резюме:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+        
+        <label for="comments">Дополнительные комментарии:</label>
+        <textarea id="comments" name="comments" placeholder="Дополнительная информация" rows="4"></textarea>
+        
+        <button type="submit">Отправить заявку</button>
+    </form>
+</body>
+</html>
+
