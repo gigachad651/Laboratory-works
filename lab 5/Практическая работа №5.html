@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчет времени для превышения долга</title>
+    <style>
+        body {
+            font-family: inherit fantasy;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-size: 17px;
+        }
+
+        input {
+            width: 100%;
+            padding: 3px;
+            margin-top: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: whitesmoke;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 16px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Расчет времени для превышения долга</h1>
+
+        <label for="loan">Сумма ссуды (M, в тысячах):</label>
+        <input type="number" id="loan" placeholder="Введите сумму ссуды" />
+
+        <label for="limit">Сумма, при которой долг превысит (S, в тысячах):</label>
+        <input type="number" id="limit" placeholder="Введите сумму превышения" />
+
+        <button onclick="calculateYears()">Рассчитать</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calculateYears() {
+            const M = parseFloat(document.getElementById('loan').value);  
+            const S = parseFloat(document.getElementById('limit').value); 
+
+            if (isNaN(M) || isNaN(S) || M <= 0 || S <= 0) {
+                document.getElementById('result').innerText = "Пожалуйста, введите корректные значения.";
+                return;
+            }
+
+            const rate = 20; 
+            let years = 0;
+            let currentDebt = M;
+
+          
+            while (currentDebt <= S) {
+                currentDebt *= (1 + rate / 100);
+                years++;
+            }
+
+          
+            document.getElementById('result').innerText = `Долг превысит сумму ${S} через ${years} лет.`;
+        }
+    </script>
+</body>
+</html>
