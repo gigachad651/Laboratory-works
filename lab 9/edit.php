@@ -2,25 +2,21 @@
 include 'db.php';
 session_start();
 
-// Проверка, что пользователь авторизован
 if (!isset($_SESSION['user'])) {
     die("Доступ запрещён!");
 }
 
-// Проверка прав доступа к редактированию
 if (isset($_GET['id'])) {
     $id = (int) $_GET['id'];
 
-    // Обычные пользователи могут редактировать только свои аккаунты
     if ($_SESSION['user']['role'] !== 'admin' && $_SESSION['user']['id'] !== $id) {
         die("У вас нет прав для редактирования этого пользователя!");
     }
 } else {
-    // Если параметр id не передан, редактируем только свой аккаунт
+
     $id = $_SESSION['user']['id']; 
 }
 
-// Запрос для получения данных пользователя
 $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
 $stmt->execute(['id' => $id]);
 $user = $stmt->fetch();
@@ -29,16 +25,15 @@ if (!$user) {
     die("Пользователь не найден!");
 }
 
-// Обработка формы
-$passwordChanged = false;  // Переменная для отслеживания изменения пароля
+
+$passwordChanged = false; 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = !empty($_POST['password']) ? password_hash($_POST['password'], PASSWORD_BCRYPT) : $user['password'];
 
-    // Получаем роль, если она передана (для админов)
-    $role = isset($_POST['role']) ? $_POST['role'] : $user['role'];  // Используем текущую роль, если она не передана
 
-    // Проверка уникальности логина, если он изменен
+    $role = isset($_POST['role']) ? $_POST['role'] : $user['role']; 
+
     if ($username !== $user['username']) {
         $checkStmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = :username AND id != :id");
         $checkStmt->execute(['username' => $username, 'id' => $id]);
@@ -48,17 +43,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare("UPDATE users SET username = :username, password = :password, role = :role WHERE id = :id");
             $stmt->execute(['username' => $username, 'password' => $password, 'role' => $role, 'id' => $id]);
 
-            // Если пароль был изменен
             if (!empty($_POST['password'])) {
                 $passwordChanged = true;
             }
         }
     } else {
-        // Обновление без изменения логина
+    
         $stmt = $pdo->prepare("UPDATE users SET username = :username, password = :password, role = :role WHERE id = :id");
         $stmt->execute(['username' => $username, 'password' => $password, 'role' => $role, 'id' => $id]);
 
-        // Если пароль был изменен
+        
         if (!empty($_POST['password'])) {
             $passwordChanged = true;
         }
@@ -81,9 +75,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         body {
-            background-color: #121212; /* Темный фон для контраста */
+            background-color: #121212; 
             color: white;
-            font-family: 'Poppins', sans-serif; /* Современный шрифт */
+            font-family: 'Poppins', sans-serif; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -93,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         h1 {
             font-size: 32px;
-            color: #ff7f50; /* Оранжевый акцент */
+            color: #ff7f50; 
             margin-bottom: 20px;
             text-align: center;
         }
@@ -131,15 +125,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         button {
-            background-color: #ff7f50; /* Кнопки с оранжевым фоном */
+            background-color: #ff7f50; 
             color: white;
             border: none;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #e67e22; /* Цвет при наведении */
-            transform: translateY(-2px); /* Легкое поднятие кнопки */
+            background-color: #e67e22; 
+            transform: translateY(-2px); 
         }
 
         .form-footer {
@@ -187,7 +181,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="container">
     <h1>Редактирование пользователя</h1>
     
-    <!-- Сообщение об успешном изменении пароля -->
     <?php if ($passwordChanged): ?>
         <div class="success-message">Пароль изменён!</div>
     <?php elseif (isset($errorMessage)): ?>
@@ -201,7 +194,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="password">Пароль:</label>
         <input type="password" name="password" id="password"><br>
 
-        <!-- Роль доступна только для администраторов -->
         <?php if ($_SESSION['user']['role'] === 'admin'): ?>
             <label for="role">Роль:</label>
             <select name="role" id="role">
@@ -214,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
     <div class="form-footer">
-        <!-- Ссылка на dashboard.php -->
+    
         <a href="dashboard.php">Вернуться на страницу пользователя</a>
     </div>
 </div>
