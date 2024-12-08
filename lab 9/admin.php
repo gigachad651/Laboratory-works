@@ -25,7 +25,7 @@ $users = $stmt->fetchAll();
         }
 
         body {
-            background-color: #121212; /* Темный фон */
+            background-color: #121212; 
             color: white;
             font-family: 'Poppins', sans-serif;
             display: flex;
@@ -46,7 +46,7 @@ $users = $stmt->fetchAll();
         }
 
         .container:hover {
-            transform: scale(1.02); /* Легкое увеличение при наведении */
+            transform: scale(1.02);
         }
 
         h1 {
@@ -54,7 +54,7 @@ $users = $stmt->fetchAll();
             margin-bottom: 20px;
             text-align: center;
             font-weight: 600;
-            color: #ff7f50; /* Оранжевый цвет для заголовка */
+            color: #ff7f50; 
         }
 
         a {
@@ -72,7 +72,7 @@ $users = $stmt->fetchAll();
 
         a:hover {
             background-color: #ddd;
-            transform: translateY(-3px); /* Поднимание кнопки при наведении */
+            transform: translateY(-3px); 
         }
 
         table {
@@ -119,7 +119,7 @@ $users = $stmt->fetchAll();
 
         .button:hover {
             background-color: #ddd;
-            transform: translateY(-2px); /* Поднимание кнопки при наведении */
+            transform: translateY(-2px); 
         }
 
         .logout {
@@ -135,8 +135,8 @@ $users = $stmt->fetchAll();
         }
 
         .logout:hover {
-            background-color: #e74c3c; /* Цвет при наведении на кнопку выйти */
-            transform: translateY(-2px); /* Поднимание кнопки при наведении */
+            background-color: #e74c3c; 
+            transform: translateY(-2px); 
         }
 
         .button-container {
@@ -165,10 +165,10 @@ $users = $stmt->fetchAll();
 <div class="container">
     <h1>Админ панель</h1>
 
-    <!-- Кнопка для добавления нового пользователя -->
+    
     <a href="adduser.php" class="button">Добавить нового пользователя</a>
 
-    <!-- Таблица пользователей -->
+    
     <table>
         <thead>
             <tr>
@@ -183,7 +183,7 @@ $users = $stmt->fetchAll();
                     <td><?php echo htmlspecialchars($user['username']); ?></td>
                     <td><?php echo htmlspecialchars($user['role']); ?></td>
                     <td class="button-container">
-                        <!-- Кнопки для редактирования и удаления -->
+                        
                         <a href="edit.php?id=<?php echo $user['id']; ?>" class="button">Редактировать</a>
                         <a href="delete.php?id=<?php echo $user['id']; ?>" class="button" onclick="return confirm('Вы уверены, что хотите удалить пользователя?');">Удалить</a>
                     </td>
@@ -192,7 +192,7 @@ $users = $stmt->fetchAll();
         </tbody>
     </table>
 
-    <!-- Кнопка выхода -->
+    
     <a href="logout.php" class="logout">Выйти</a>
 </div>
 
