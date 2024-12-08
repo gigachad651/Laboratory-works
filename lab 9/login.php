@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet"> <!-- Новый шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet"> 
     <style>
         * {
             box-sizing: border-box;
@@ -35,9 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         body {
-            background-color: #121212; /* Темный фон для контраста */
+            background-color: #121212; 
             color: white;
-            font-family: 'Poppins', sans-serif; /* Современный шрифт */
+            font-family: 'Poppins', sans-serif; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         h1 {
             font-size: 32px;
-            color: #ff7f50; /* Оранжевый акцент */
+            color: #ff7f50; 
             margin-bottom: 20px;
             text-align: center;
         }
@@ -80,19 +80,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         button {
-            background-color: #ff7f50; /* Кнопки с оранжевым фоном */
+            background-color: #ff7f50; 
             color: white;
             border: none;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #e67e22; /* Цвет при наведении */
-            transform: translateY(-2px); /* Легкое поднятие кнопки */
+            background-color: #e67e22; 
+            transform: translateY(-2px); 
         }
 
         .error {
-            color: #f44336; /* Красный цвет для ошибки */
+            color: #f44336; 
             font-size: 16px;
             margin-bottom: 20px;
             text-align: center;
@@ -106,13 +106,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .register-link a {
-            color: #ff7f50; /* Оранжевый цвет для ссылки */
+            color: #ff7f50; 
             text-decoration: none;
             font-weight: bold;
         }
 
         .register-link a:hover {
-            text-decoration: underline; /* Подчеркивание при наведении */
+            text-decoration: underline; 
         }
 
         @media (max-width: 768px) {
