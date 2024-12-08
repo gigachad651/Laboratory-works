@@ -22,7 +22,7 @@ if (!isset($_SESSION['user'])) {
         body {
             background-color: black;
             color: white;
-            font-family: 'Poppins', sans-serif; /* Новый шрифт Poppins */
+            font-family: 'Poppins', sans-serif; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,7 +33,7 @@ if (!isset($_SESSION['user'])) {
         .container {
             width: 100%;
             max-width: 600px;
-            background-color: rgba(0, 0, 0, 0.85); /* Уменьшена прозрачность фона для лучшего контраста */
+            background-color: rgba(0, 0, 0, 0.85); 
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
@@ -46,7 +46,7 @@ if (!isset($_SESSION['user'])) {
             font-size: 32px;
             margin-bottom: 20px;
             font-weight: 600;
-            color: #ff7f50; /* Accent color for heading */
+            color: #ff7f50; 
         }
         p {
             font-size: 18px;
