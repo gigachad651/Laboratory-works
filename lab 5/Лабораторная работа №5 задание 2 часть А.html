@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка массива чисел</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Программа обработки массива действительных чисел</h1>
+    <p>Введите массив чисел (например: 1.5, -2.3, 0.4):</p>
+    <input type="text" id="inputArray" placeholder="1.5, -2.3, 0.4" />
+    <button onclick="processArray()">Обработать массив</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function processArray() {
+            const inputStr = document.getElementById('inputArray').value;
+            const numbers = inputStr.split(',').map(num => parseFloat(num.trim()));
+            let sum = 0;
+            let found = false;
+
+            for (let i = numbers.length - 1; i >= 0; i--) {
+                if (Math.sin(numbers[i]) < 0) {
+                    found = true;
+                    for (let j = i; j < numbers.length; j++) {
+                        sum += numbers[j];
+                    }
+                    break;
+                }
+            }
+
+            const resultElement = document.getElementById('result');
+            if (found) {
+                resultElement.textContent = `Сумма элементов от последнего элемента с отрицательным синусом до конца массива: ${sum}`;
+            } else {
+                resultElement.textContent = 'Нет элементов с отрицательным синусом.';
+            }
+        }
+    </script>
+</body>
+</html>

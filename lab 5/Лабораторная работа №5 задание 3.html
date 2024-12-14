@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка пути к файлу</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        input {
+            font-family: 'Orbitron', sans-serif;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Программа для извлечения папок из пути</h1>
+    <p>Введите полный путь к файлу (например: C:/Users/Username/Documents/File.txt):</p>
+    <input type="text" id="filePath" placeholder="C:/Users/Username/Documents/File.txt" />
+    <button onclick="processPath()">Извлечь папки</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function processPath() {
+            const filePath = document.getElementById('filePath').value.trim();
+
+            if (filePath === "") {
+                document.getElementById('result').textContent = 'Введите путь.';
+                return;
+            }
+
+            const pathParts = filePath.split(/[\\/]/).filter(part => part && !part.includes('.'));
+
+            if (pathParts.length > 0) {
+                const resultList = pathParts.map(part => `<li>${part}</li>`).join('');
+                document.getElementById('result').innerHTML = `<ul>${resultList}</ul>`;
+            } else {
+                document.getElementById('result').textContent = 'Путь не содержит папок.';
+            }
+        }
+    </script>
+</body>
+</html>

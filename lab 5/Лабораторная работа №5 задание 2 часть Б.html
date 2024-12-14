@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка массива чисел</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Программа обработки массива действительных чисел</h1>
+    <p>Введите массив чисел (например: 15, 23, 37):</p>
+    <input type="text" id="inputArray" placeholder="15, 23, 37" />
+    <button onclick="processArray()">Обработать массив</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function isPrimeDigit(num) {
+            const primeDigits = ['2', '3', '5', '7'];
+            return primeDigits.includes(num);
+        }
+
+        function processArray() {
+            const inputStr = document.getElementById('inputArray').value;
+            const numbers = inputStr.split(',').map(num => parseFloat(num.trim()));
+            const filteredArray = numbers.filter(num => {
+                const integerPart = Math.abs(Math.floor(num)).toString();
+                return !Array.from(integerPart).every(digit => isPrimeDigit(digit));
+            });
+
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `Массив после удаления элементов: ${filteredArray.join(', ')}`;
+        }
+    </script>
+</body>
+</html>
+
